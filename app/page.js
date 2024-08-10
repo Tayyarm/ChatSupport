@@ -173,9 +173,17 @@ export default function Home() {
                       : theme.palette.secondary.main
                   }
                   color="white"
-                  borderRadius={16}
+                  borderRadius={20}
                   p={2}
                   maxWidth="80%"
+                  sx={{
+                    boxShadow: `0 4px 8px ${theme.palette.secondary.main}`,
+                    '&:hover': {
+                      backgroundColor: theme.palette.primary.dark,
+                      cursor: 'pointer',
+                      transition: 'background-color 0.3s ease',
+                    },
+                  }}
                 >
                   {message.content}
                 </Box>
@@ -217,8 +225,12 @@ export default function Home() {
                   bgcolor: theme.palette.primary.main,
                   color: theme.palette.background.default,
                   width: '100%',
+                  borderRadius: '20px',
+                  boxShadow: `0 4px 8px ${theme.palette.primary.dark}`,
                   '&:hover': {
                     bgcolor: theme.palette.secondary.main,
+                    transform: 'scale(1.05)',
+                    transition: 'transform 0.2s ease',
                   },
                   '&:disabled': {
                     bgcolor: theme.palette.primary.light,
